@@ -1,0 +1,16 @@
+{
+  "name": "CartoonFlight",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coolfishstudio/CartoonFlight.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "yves",
+}
