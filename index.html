@@ -11,10 +11,10 @@
     <meta name="screen-orientation" content="portrait"/>
     <meta name="x5-fullscreen" content="true"/>
     <meta name="360-fullscreen" content="true"/>
-    <link rel="apple-touch-icon" href="/favicon.ico">
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="bookmark" href="/favicon.ico"/>
-    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="bookmark" href="./favicon.ico"/>
+    <link rel="icon" href="./favicon.ico">
     <style>
         html, body {
             -ms-touch-action: none;
@@ -28,12 +28,12 @@
 
     <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
     <!--modules_files_start-->
-	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
-	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
-	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
-	<script egret="lib" src="libs/modules/game/game.web.js" src-release="libs/modules/game/game.web.min.js"></script>
-	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
-	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/game/game.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/game/game.web.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/tween/tween.min.js"></script>
+	<script egret="lib" src="./release/libs/modules/res/res.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -42,14 +42,7 @@
 
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
-	<script egret="game" src="bin-debug/Airplane.js"></script>
-	<script egret="game" src="bin-debug/BgMap.js"></script>
-	<script egret="game" src="bin-debug/Bullet.js"></script>
-	<script egret="game" src="bin-debug/GameContainer.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
-	<script egret="game" src="bin-debug/Main.js"></script>
-	<script egret="game" src="bin-debug/ScorePanel.js"></script>
-	<script egret="game" src="bin-debug/util.js"></script>
+	<script src="./release/main.min.js"></script>
 	<!--game_files_end-->
 </head>
 <body>
