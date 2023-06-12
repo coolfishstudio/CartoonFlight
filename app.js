@@ -3,52 +3,59 @@ var http = require('http'),
 	path = require('path'),
 	fs = require('fs');
 
-var port = 9301;
+var port = 3906;
 
 http.createServer(function (req, res) {
 	var pathname = __dirname + '/release' + url.parse(req.url).pathname;
 	if (pathname.charAt(pathname.length -1) == '/') {
 		pathname += 'index.html';
 	}
+	function serve(type){
+		res.writeHead(200, {
+			'Content-Type': type,
+			'Access-Control-Allow-Origin': '*'
+		});
+	}
 	fs.exists(pathname, function (exists) {
+		console.log('pathname', pathname, exists);
 		if(exists){
 			switch (path.extname(pathname)) {
 				case '.html':
-					res.writeHead(200, {'Content-Type': 'text/html'});
+					serve('text/html');
 					break;
 				case '.js':
-					res.writeHead(200, {'Content-Type': 'text/javascript'});
+					serve('text/javascript');
 					break;
 				case '.css':
-					res.writeHead(200, {'Content-Type': 'text/css'});
+					serve('text/css');
 					break;
 				case '.gif':
-					res.writeHead(200, {'Content-Type': 'image/git'});
+					serve('image/git');
 					break;
 				case '.jpg':
-					res.writeHead(200, {'Content-Type': 'image/jpeg'});
+					serve('image/jpeg');
 					break;
 				case '.png':
-					res.writeHead(200, {'Content-Type': 'image/png'});
+					serve('image/png');
 					break;
 				case '.json':
-					res.writeHead(200, {'Content-Type': 'application/json'});
+					serve('application/json');
 					break;
 				case '.fnt':
-					res.writeHead(200, {'Content-Type': 'txt/plain'});
+					serve('txt/plain');
 					break;
 				case '.mp3':
-					res.writeHead(200, {'Content-Type': 'audio/mpeg'});
+					serve('audio/mpeg');
 					break;
 				default:
-					res.writeHead(200, {'Content-Type': 'application/octet-stream'});
+					serve('application/octet-stream');
 				 	break;
 			}
 			fs.readFile(pathname, function (err, data) {
-				res.end(data);	
+				res.end(data);
 			});
 		}else{
-			res.writeHead(404, {'Content-Type': 'text/html'});
+			res.writeHead(404, {'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*'});
 			res.end('<h1>404 Not Found</h1>');
 		}
 	});

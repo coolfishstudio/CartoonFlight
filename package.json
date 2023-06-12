@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app",
+    "dev": "npm run start"
   },
   "repository": {
     "type": "git",
@@ -12,5 +13,5 @@
   "keywords": [
     "node"
   ],
-  "author": "yves",
+  "author": "yves"
 }
